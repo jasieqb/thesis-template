@@ -1,0 +1,20 @@
+name: Build LaTeX document
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install LaTeX 
+        run: sudo apt-get update && sudo apt-get install texlive-base texlive-latex-extra texlive-extra-utils texlive-fonts-recommended texlive-latex-recommended texlive-lang-polish texlive-bibtex-extra biber latexmk
+
+      - name: Checkout repository 
+        uses: actions/checkout@v2
+
+      - name: Build LaTeX document 
+        run: latexmk -synctex=1 -interaction=nonstopmode -file-line-error -pdf -shell-escape -bibtex thesis.tex
+        
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: thesis.pdf
+          path: thesis.pdf
