@@ -1,11 +1,14 @@
 # UMCS thesis template
+
 ## Contains:
+
 * multi-file latex project
 * BibLaTeX for [bibliography](refs.bib)
 * [devcontainer](.devcontainer/devcontainer.json) preconfigured for vscode
 * auto build pdf with Github Actions (each commit)
 
 ## How to use
+
 * template this repo (button on top right)
 * clone your repo
 * open in vscode
@@ -28,6 +31,26 @@ latexmk -synctex=1 -interaction=nonstopmode -file-line-error -pdf -shell-escape 
 ```
 You can also use `latexmk` with you favorite LaTeX editor.
 
+## Github Actions
+
+### Every commit
+* build pdf
+* upload pdf as artifact (can be downloaded from Actions tab)
+
+### On tag
+
+#### Setup
+
+* go to `Settings` -> `Actions` -> `General` -> `Workflow permissions` and set `Read and write permissions`
+
+### On tag matching `v*.*.*`
+
+* build pdf
+* upload pdf as release asset
+
 ## TODO 
-* imporve ci/cd:
-  * auto release by tags  
+- [ ] imporve ci/cd:
+  - [ ] auto release by tags:
+    - [x] simple release with pdf attached (and source code)
+    - [ ] release with changelog
+    
