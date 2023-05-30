@@ -54,3 +54,5 @@ You can also use `latexmk` with you favorite LaTeX editor.
     - [x] simple release with pdf attached (and source code)
     - [ ] release with changelog
     
+## Useful links
+* <https://en.wikibooks.org/wiki/LaTeX/Bibliographies_with_biblatex_and_biber>
